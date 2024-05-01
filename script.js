@@ -19,7 +19,7 @@ const createBtn = function (name) {
 };
 
 // ::: Task Adding to Table ::: //
-const taskAdding = function (task, due, editBtn, checkBtn, delBtn) {
+const taskAdding = function (task, due) {
   // Create new row
   let row = document.createElement("tr");
 
@@ -50,7 +50,7 @@ const taskAdding = function (task, due, editBtn, checkBtn, delBtn) {
 };
 
 // ::: Edit Button Working ::: //
-const editTask = function (editBtns, editBtn, checkBtn, delBtn) {
+const editTask = function (editBtns) {
   editBtns.forEach(function (task) {
     task.addEventListener("click", function (e) {
       e.preventDefault();
@@ -82,7 +82,7 @@ const editTask = function (editBtns, editBtn, checkBtn, delBtn) {
 };
 
 // ::: Check Button Working ::: //
-const checkTask = function (checkBtns, editBtn, checkBtn, delBtn) {
+const checkTask = function (checkBtns) {
   checkBtns.forEach(function (b) {
     b.addEventListener("click", function (e) {
       e.preventDefault();
@@ -94,7 +94,7 @@ const checkTask = function (checkBtns, editBtn, checkBtn, delBtn) {
 };
 
 // ::: Delete Button Working ::: //
-const deleteTask = function (d, editBtn, checkBtn, delBtn) {
+const deleteTask = function (d) {
   let idx = Number(d?.parentElement?.parentElement?.rowIndex) - 1;
   if (idx >= 1) {
     tableBody.deleteRow(idx);
